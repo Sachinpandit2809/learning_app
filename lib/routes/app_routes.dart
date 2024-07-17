@@ -9,7 +9,7 @@ class AppRouter extends $AppRouter {
         AutoRoute(
           page: SplashRoute.page,
           path: RoutesName.splash,
-          initial: true,
+          // initial: true,
         ),
         AutoRoute(
           page: LoginRoute.page,
@@ -32,21 +32,21 @@ class AppRouter extends $AppRouter {
           path: RoutesName.indexcopy2,
         ),
         AutoRoute(
-            page: CategoryRoute.page, path: RoutesName.category, 
-            // initial: true
-            ),
+          page: CategoryRoute.page,
+          path: RoutesName.category,
+        ),
         AutoRoute(
           page: CategoryOneRoute.page,
           path: RoutesName.category1,
         ),
         AutoRoute(
-          page: CategoryTwoRoute.page,
-          path: RoutesName.category2,
-        ),
+            page: CategoryTwoRoute.page,
+            path: RoutesName.category2,
+          ),
         AutoRoute(
-          page: CategoryThreeRoute.page,
-          path: RoutesName.category3,
-        ),
+            page: CategoryThreeRoute.page,
+            path: RoutesName.category3,
+            initial: true),
         AutoRoute(
           page: CategoryFourRoute.page,
           path: RoutesName.category4,
