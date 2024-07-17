@@ -40,20 +40,20 @@ class AppRouter extends $AppRouter {
           path: RoutesName.category1,
         ),
         AutoRoute(
-            page: CategoryTwoRoute.page,
-            path: RoutesName.category2,
-          ),
+          page: CategoryTwoRoute.page,
+          path: RoutesName.category2,
+        ),
         AutoRoute(
-            page: CategoryThreeRoute.page,
-            path: RoutesName.category3,
-            initial: true),
+          page: CategoryThreeRoute.page,
+          path: RoutesName.category3,
+        ),
         AutoRoute(
           page: CategoryFourRoute.page,
           path: RoutesName.category4,
         ),
         AutoRoute(
-          page: CategoryFiveRoute.page,
-          path: RoutesName.category5,
-        ),
+            page: CategoryFiveRoute.page,
+            path: RoutesName.category5,
+            initial: true),
       ];
 }
