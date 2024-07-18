@@ -7,6 +7,7 @@ import 'package:learning_app/colors/my_color.dart';
 import 'package:learning_app/extension/context_extension.dart';
 import 'package:learning_app/extension/num_extension.dart';
 import 'package:learning_app/routes/routes_name.dart';
+import 'package:learning_app/screens/category/mydrawer_screen.dart';
 import 'package:learning_app/styles/text_style.dart';
 
 @RoutePage()
@@ -22,7 +23,7 @@ class _IndexScreenState extends State<IndexScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       // backgroundColor:Gradient.linear(0, 100, Colors.red),
-      drawer: Drawer(),
+      drawer: MydrawerScreen(),
       appBar: AppBar(
         backgroundColor: Colors.yellow.shade200,
         actions: const [
@@ -133,17 +134,20 @@ class _IndexScreenState extends State<IndexScreen> {
               ),
               /////////// this is container data
               Expanded(
-                child: ListView.builder(
-                    itemCount: 10,
-                    itemBuilder: (context, index) {
-                      // here implemnted ink well only for test
-                      return InkWell(
-                          onTap: () {
-                            context.router.pushNamed(RoutesName.indexcopy1);
-                          },
-                          child: ContainerBox());
-                    }),
-              )
+                  child: GridView.builder(
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2,
+                          crossAxisSpacing: 5,
+                          mainAxisSpacing: 10),
+                      itemCount: 10,
+                      itemBuilder: (context, index) {
+                        // here implemnted ink well only for test
+                        return InkWell(
+                            onTap: () {
+                              context.router.pushNamed(RoutesName.indexcopy1);
+                            },
+                            child: ContainerBox());
+                      }))
               //next
             ],
           )),
@@ -247,105 +251,57 @@ class ContainerBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Container(
-            margin: EdgeInsets.all(5),
-            height: 226,
-            width: 170,
-            decoration: BoxDecoration(
-                color: MyColor.white,
-                border: Border.all(color: MyColor.black),
-                borderRadius: BorderRadius.circular(12)),
-            child: Column(
-              children: [
-                const Text(
-                  "100 Essential \n Grammer",
-                  style: KTextStyle.K_18,
-                ),
-                (context.contextHeight * .02).heightBox,
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Image.asset("assets/images/png/index_box.png"),
-                    Text(
-                      "in this lesson we \nlearn new words",
-                      style: KTextStyle.K_12,
-                    ),
-                  ],
-                ),
-                Container(
-                    margin: EdgeInsets.all(10), height: 5, color: Colors.green)
-                //progressor bar
-                ,
-                Text(
-                  "Completed 12 of 12",
-                  style: TextStyle(color: Colors.green),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    CustomColorButton(
-                        title: "Reputation",
-                        color: Colors.red,
-                        onPressFunction: () {}),
-                    CustomColorButton(
-                        title: "Reputation",
-                        color: Colors.blue,
-                        onPressFunction: () {})
-                  ],
-                )
-              ],
-            )),
-        Container(
-            margin: EdgeInsets.all(5),
-            height: 226,
-            width: 170,
-            decoration: BoxDecoration(
-                color: MyColor.white,
-                border: Border.all(color: MyColor.black),
-                borderRadius: BorderRadius.circular(12)),
-            child: Column(
-              children: [
-                const Text(
-                  "100 Essential \n Grammer",
-                  style: KTextStyle.K_18,
-                ),
-                (context.contextHeight * .02).heightBox,
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Image.asset("assets/images/png/index_box.png"),
-                    Text(
-                      "in this lesson we \nlearn new words",
-                      style: KTextStyle.K_12,
-                    ),
-                  ],
-                ),
-                Container(
-                    margin: EdgeInsets.all(10), height: 5, color: Colors.green)
-                //progressor bar
-                ,
-                Text(
-                  "Completed 12 of 12",
-                  style: TextStyle(color: Colors.green),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    CustomColorButton(
-                        title: "Reputation",
-                        color: Colors.red,
-                        onPressFunction: () {}),
-                    CustomColorButton(
-                        title: "Reputation",
-                        color: Colors.blue,
-                        onPressFunction: () {})
-                  ],
-                )
-              ],
-            )),
-      ],
-    );
+    return Container(
+        margin: EdgeInsets.all(5),
+        height: 256,
+        width: 170,
+        decoration: BoxDecoration(
+            color: MyColor.white,
+            border: Border.all(color: MyColor.black),
+            borderRadius: BorderRadius.circular(12)),
+        child: Padding(
+          padding: const EdgeInsets.only(left: 5.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                "100 Essential \nGrammer",
+                style: KTextStyle.K_18,
+              ),
+              (context.contextHeight * .01).heightBox,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Image.asset("assets/images/png/index_box.png"),
+                  Text(
+                    "in this lesson we \nlearn new words",
+                    style: KTextStyle.K_12,
+                  ),
+                ],
+              ),
+              Container(
+                  margin: EdgeInsets.all(4), height: 4, color: Colors.green)
+              //progressor bar
+              ,
+              Text(
+                "Completed 12 of 12",
+                style: TextStyle(color: Colors.green),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  CustomColorButton(
+                      title: "Reputation",
+                      color: Colors.red,
+                      onPressFunction: () {}),
+                  CustomColorButton(
+                      title: "Reputation",
+                      color: Colors.blue,
+                      onPressFunction: () {})
+                ],
+              )
+            ],
+          ),
+        ));
   }
 }

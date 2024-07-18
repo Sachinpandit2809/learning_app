@@ -18,7 +18,12 @@ class RoutesName {
 
   static const String editProfile1 = "/editProfile1";
   static const String editProfile2 = "/editProfile2";
+  static const String lesson = "/lesson";
 
   static const String lesson_one = "/lesson_one";
+  static const String course = "/course";
+  static const String course1 = "/course1";
+  static const String course2 = "/course2";
+
 
 }

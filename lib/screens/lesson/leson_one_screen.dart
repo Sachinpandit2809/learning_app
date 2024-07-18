@@ -23,12 +23,52 @@ class _LesonOneScreenState extends State<LesonOneScreen>
     super.initState();
   }
 
+  int _currentQuestionIndex = 0;
+  int _score = 0;
+
+  final List<Map<String, Object>> _questions = [
+    {
+      'question': '1 What is the capital of France?',
+      'answers': [
+        {'text': 'Berlin', 'score': 0},
+        {'text': 'Madrid', 'score': 0},
+        {'text': 'Paris', 'score': 1},
+        {'text': 'Lisbon', 'score': 0},
+      ],
+    },
+    {
+      'question': '2 Who wrote "Hamlet"?',
+      'answers': [
+        {'text': 'Charles Dickens', 'score': 0},
+        {'text': 'William Shakespeare', 'score': 1},
+        {'text': 'Mark Twain', 'score': 0},
+        {'text': 'Leo Tolstoy', 'score': 0},
+      ],
+    },
+    {
+      'question': '3 What is the largest planet in our Solar System?',
+      'answers': [
+        {'text': 'Earth', 'score': 0},
+        {'text': 'Jupiter', 'score': 1},
+        {'text': 'Saturn', 'score': 0},
+        {'text': 'Mars', 'score': 0},
+      ],
+    },
+  ];
+
+  void _answerQuestion(int score) {
+    setState(() {
+      _score += score;
+      _currentQuestionIndex++;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    var tabController;
+    // var tabController;
     return DefaultTabController(
       length: 2,
-      initialIndex: 1,
+      initialIndex: 0,
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Color(0xFFf5f1e1),
@@ -117,7 +157,46 @@ class _LesonOneScreenState extends State<LesonOneScreen>
         ),
         body: TabBarView(
           controller: tabController,
-          children: [Text("data  1  "), Text(" data  2")],
+          children: [
+            _currentQuestionIndex < _questions.length
+                ? Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(
+                        _questions[_currentQuestionIndex]['question'] as String,
+                        style: TextStyle(fontSize: 24),
+                        textAlign: TextAlign.center,
+                      ),
+                      ...(_questions[_currentQuestionIndex]['answers']
+                              as List<Map<String, Object>>)
+                          .map((answer) {
+                        return ElevatedButton(
+                          onPressed: () =>
+                              _answerQuestion(answer['score'] as int),
+                          child: Text(answer['text'] as String),
+                        );
+                      }).toList(),
+                    ],
+                  )
+                : Center(
+                    child: Text(
+                      'You did it! Your score is $_score',
+                      style: TextStyle(fontSize: 24),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+
+            ///////////////////////////////////////////////////////////////////
+            Padding(
+              padding: const EdgeInsets.all(18.0),
+              child: Center(
+                  child: Text(
+                "Comments will be updateb when backend cretes",
+                style: TextStyle(fontSize: 24),
+              )),
+            )
+          ],
         ),
       ),
     );

@@ -7,6 +7,7 @@ import 'package:learning_app/colors/my_color.dart';
 import 'package:learning_app/extension/context_extension.dart';
 import 'package:learning_app/extension/num_extension.dart';
 import 'package:learning_app/routes/routes_name.dart';
+import 'package:learning_app/screens/category/mydrawer_screen.dart';
 import 'package:learning_app/styles/text_style.dart';
 
 @RoutePage()
@@ -22,7 +23,7 @@ class _IndexcopyScreenState extends State<IndexcopyScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       // backgroundColor:Gradient.linear(0, 100, Colors.red),
-      drawer: Drawer(),
+    drawer: MydrawerScreen(),
       appBar: AppBar(
         backgroundColor: Colors.yellow.shade200,
         actions: const [
@@ -97,7 +98,11 @@ class _IndexcopyScreenState extends State<IndexcopyScreen> {
 
               /////////// this is container data
               Expanded(
-                child: ListView.builder(
+                child: GridView.builder(
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        crossAxisSpacing: 10,
+                        mainAxisSpacing: 10),
                     itemCount: 10,
                     itemBuilder: (context, index) {
                       return InkWell(
@@ -210,88 +215,44 @@ class NContainerBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Container(
-            margin: EdgeInsets.all(5),
-            height: 226,
-            width: 170,
-            decoration: BoxDecoration(
-                color: MyColor.white,
-                border: Border.all(color: MyColor.black),
-                borderRadius: BorderRadius.circular(12)),
-            child: Column(
+    return Container(
+        margin: EdgeInsets.all(5),
+        height: 246,
+        width: 170,
+        decoration: BoxDecoration(
+            color: MyColor.white,
+            border: Border.all(color: MyColor.black),
+            borderRadius: BorderRadius.circular(12)),
+        child: Column(
+          children: [
+            const Text(
+              "100 Essential \n Grammer",
+              style: KTextStyle.K_18,
+            ),
+            (context.contextHeight * .01).heightBox,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                const Text(
-                  "100 Essential \n Grammer",
-                  style: KTextStyle.K_18,
-                ),
-                (context.contextHeight * .02).heightBox,
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Image.asset("assets/images/png/index_box.png"),
-                    Text(
-                      "in this lesson we \nlearn new words",
-                      style: KTextStyle.K_12,
-                    ),
-                  ],
-                ),
-                Container(
-                    margin: EdgeInsets.all(10), height: 5, color: Colors.green)
-                //progressor bar
-                ,
+                Image.asset("assets/images/png/index_box.png"),
                 Text(
-                  "Completed 12 of 12",
-                  style: TextStyle(color: Colors.green),
+                  "in this lesson we \nlearn new words",
+                  style: KTextStyle.K_12,
                 ),
-                FlexibleCustomColorButton(
-                    title: "Reputation from 24 hour",
-                    color: Colors.red,
-                    onPressFunction: () {})
               ],
-            )),
-        Container(
-            margin: EdgeInsets.all(5),
-            height: 226,
-            width: 170,
-            decoration: BoxDecoration(
-                color: MyColor.white,
-                border: Border.all(color: MyColor.black),
-                borderRadius: BorderRadius.circular(12)),
-            child: Column(
-              children: [
-                const Text(
-                  "100 Essential \n Grammer",
-                  style: KTextStyle.K_18,
-                ),
-                (context.contextHeight * .02).heightBox,
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Image.asset("assets/images/png/index_box.png"),
-                    Text(
-                      "in this lesson we \nlearn new words",
-                      style: KTextStyle.K_12,
-                    ),
-                  ],
-                ),
-                Container(
-                    margin: EdgeInsets.all(10), height: 5, color: Colors.green)
-                //progressor bar
-                ,
-                Text(
-                  "Completed 12 of 12",
-                  style: TextStyle(color: Colors.green),
-                ),
-                FlexibleCustomColorButton(
-                    title: "Reputation from 24 hour",
-                    color: Colors.blue,
-                    onPressFunction: () {})
-              ],
-            )),
-      ],
-    );
+            ),
+            Container(margin: EdgeInsets.all(5), height: 5, color: Colors.green)
+            //progressor bar
+            ,
+            Text(
+              "Completed 12 of 12",
+              style: TextStyle(color: Colors.green),
+            ),
+            FlexibleCustomColorButton(
+                title: "Reputation from 24 hour",
+                color: Colors.blue,
+                onPressFunction: () {})
+          ],
+        ));
   }
 }
 

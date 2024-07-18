@@ -8,6 +8,7 @@ import 'package:flutter/widgets.dart';
 import 'package:learning_app/colors/my_color.dart';
 import 'package:learning_app/extension/context_extension.dart';
 import 'package:learning_app/extension/num_extension.dart';
+import 'package:learning_app/screens/category/mydrawer_screen.dart';
 import 'package:learning_app/styles/text_style.dart';
 
 @RoutePage()
@@ -23,7 +24,7 @@ class _Indexcopy2ScreenState extends State<Indexcopy2Screen> {
   Widget build(BuildContext context) {
     return Scaffold(
         // backgroundColor:Gradient.linear(0, 100, Colors.red),
-        drawer: Drawer(),
+        drawer: MydrawerScreen(),
         appBar: AppBar(
           backgroundColor: Colors.yellow.shade200,
           actions: const [
