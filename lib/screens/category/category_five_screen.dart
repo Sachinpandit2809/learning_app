@@ -94,33 +94,30 @@ class _CategoryFiveScreenState extends State<CategoryFiveScreen> {
       body: Column(
         children: [
           Expanded(
-            flex: 8,
+            flex: 1,
             child: Container(
               color: Colors.cyan,
             ),
           ),
-          Expanded(
-            flex: 1,
-            child: Container(
-              color: const Color.fromARGB(255, 255, 250, 252),
-              child: Row(
-                children: [
-                  // Image(
-                  //   image: AssetImage("assets/images/png/profile2.png"),
-                  // ),
-                  TextFormField(
-                    
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.black),
-                        borderRadius: BorderRadius.circular(40),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
+          //   Container(
+          //     height: 100,
+          //     color: const Color.fromARGB(255, 255, 250, 252),
+          //     child: Row(
+          //       children: [
+          //         // Image(
+          //         //   image: AssetImage("assets/images/png/profile2.png"),
+          //         // ),
+          //         TextFormField(
+          //           decoration: InputDecoration(
+          //             border: OutlineInputBorder(
+          //               borderSide: BorderSide(color: Colors.black),
+          //               borderRadius: BorderRadius.circular(40),
+          //             ),
+          //           ),
+          //         ),
+          //       ],
+          //     ),
+          //   ),
         ],
       ),
     );

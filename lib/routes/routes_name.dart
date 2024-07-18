@@ -12,4 +12,13 @@ class RoutesName {
   static const String category4 = "/category4";
   static const String category5 = "/category5";
 
+  static const String profile = "/profile";
+  static const String userProfile = "/userProfile";
+  static const String editProfile = "/editProfile";
+
+  static const String editProfile1 = "/editProfile1";
+  static const String editProfile2 = "/editProfile2";
+
+  static const String lesson_one = "/lesson_one";
+
 }

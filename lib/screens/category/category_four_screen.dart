@@ -3,6 +3,7 @@ import "package:flutter/material.dart";
 import "package:learning_app/colors/my_color.dart";
 import "package:learning_app/extension/context_extension.dart";
 import "package:learning_app/extension/num_extension.dart";
+import "package:learning_app/screens/category/mydrawer_screen.dart";
 import "package:learning_app/styles/text_style.dart";
 
 @RoutePage()
@@ -17,6 +18,7 @@ class _MyWidgetState extends State<CategoryFourScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: MydrawerScreen(),
       backgroundColor: Color.fromARGB(231, 255, 255, 255),
       appBar: AppBar(
         backgroundColor: Color(0xFFF7B500),

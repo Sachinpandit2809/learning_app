@@ -50,10 +50,35 @@ class AppRouter extends $AppRouter {
         AutoRoute(
           page: CategoryFourRoute.page,
           path: RoutesName.category4,
+          // initial: true
         ),
         AutoRoute(
-            page: CategoryFiveRoute.page,
-            path: RoutesName.category5,
+          page: CategoryFiveRoute.page,
+          path: RoutesName.category5,
+        ),
+        AutoRoute(
+          page: ProfileRoute.page,
+          path: RoutesName.profile,
+        ),
+        AutoRoute(
+          page: EditProfileRoute.page,
+          path: RoutesName.editProfile,
+        ),
+        AutoRoute(
+          page: EditProfileOneRoute.page,
+          path: RoutesName.editProfile1,
+        ),
+        AutoRoute(
+          page: EditProfileTwoRoute.page,
+          path: RoutesName.editProfile2,
+        ),
+        AutoRoute(
+            page: UserProfileRoute.page,
+            path: RoutesName.userProfile,
+            ),
+            AutoRoute(
+            page: LesonOneRoute.page,
+            path: RoutesName.lesson_one,
             initial: true),
       ];
 }
