@@ -68,11 +68,11 @@ class _MydrawerScreenState extends State<MydrawerScreen> {
                       context.router.pushNamed(RoutesName.index);
                     },
                     title: const Text(
-                      "Index",
+                      "Home",
                     ),
                     textColor: Colors.white,
                     leading: const Icon(
-                      Icons.category_outlined,
+                      Icons.home,
                     ),
                     iconColor: Colors.white,
                   ),
@@ -98,7 +98,7 @@ class _MydrawerScreenState extends State<MydrawerScreen> {
                     ),
                     textColor: Colors.white,
                     leading: const Icon(
-                      Icons.category_outlined,
+                      Icons.golf_course,
                     ),
                     iconColor: Colors.white,
                   ),
@@ -111,7 +111,7 @@ class _MydrawerScreenState extends State<MydrawerScreen> {
                     ),
                     textColor: Colors.white,
                     leading: const Icon(
-                      Icons.category_outlined,
+                      Icons.person,
                     ),
                     iconColor: Colors.white,
                   ),
@@ -124,7 +124,7 @@ class _MydrawerScreenState extends State<MydrawerScreen> {
                     },
                     textColor: Colors.white,
                     leading: const Icon(
-                      Icons.category_outlined,
+                      Icons.settings,
                     ),
                     iconColor: Colors.white,
                   ),
@@ -137,17 +137,20 @@ class _MydrawerScreenState extends State<MydrawerScreen> {
                     },
                     textColor: Colors.white,
                     leading: const Icon(
-                      Icons.category_outlined,
+                      Icons.play_lesson,
                     ),
                     iconColor: Colors.white,
                   ),
-                  const ListTile(
+                  ListTile(
+                    onTap: () {
+                      context.router.pushNamed(RoutesName.login); 
+                    },
                     title: Text(
-                      "Categories",
+                      "Log Out",
                     ),
-                    textColor: Colors.white,
+                    textColor: Colors.red,
                     leading: Icon(
-                      Icons.category_outlined,
+                      Icons.logout,
                     ),
                     iconColor: Colors.white,
                   ),

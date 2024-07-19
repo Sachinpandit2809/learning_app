@@ -68,7 +68,7 @@ class _MyWidgetState extends State<CategoryThreeScreen> {
                   )),
               Expanded(
                 child: ListView.builder(
-                    itemCount: 26,
+                    itemCount: 300,
                     itemBuilder: (context, index) {
                       return InkWell(
                         onTap: () {

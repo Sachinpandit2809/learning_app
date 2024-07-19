@@ -65,7 +65,7 @@ class _Indexcopy2ScreenState extends State<Indexcopy2Screen> {
                       height: 150,
                       child: ListView.builder(
                           scrollDirection: Axis.horizontal,
-                          itemCount: 12,
+                          itemCount: 200,
                           itemBuilder: (context, index) {
                             return InkWell(
                               onTap: () {
@@ -78,7 +78,7 @@ class _Indexcopy2ScreenState extends State<Indexcopy2Screen> {
                                 width: 100,
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(12),
-                                    color: Colors.white),
+                                    color: Colors.white.withOpacity(0.7)),
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -103,7 +103,7 @@ class _Indexcopy2ScreenState extends State<Indexcopy2Screen> {
 
                 Expanded(
                   child: ListView.builder(
-                      itemCount: 10,
+                      itemCount: 100,
                       itemBuilder: (context, index) {
                         return InkWell(
                           onTap: () {
@@ -113,7 +113,7 @@ class _Indexcopy2ScreenState extends State<Indexcopy2Screen> {
                             height: 90,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(12),
-                                color: MyColor.white,
+                                color: MyColor.white.withOpacity(0.5),
                                 border:
                                     Border.all(color: Colors.grey.shade600)),
                             margin: EdgeInsets.all(10),

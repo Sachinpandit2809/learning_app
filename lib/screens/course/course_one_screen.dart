@@ -25,7 +25,7 @@ class _CourseOneScreenState extends State<CourseOneScreen> {
               Image.asset("assets/images/png/lesson1.png"),
               Expanded(
                   child: ListView.builder(
-                      itemCount: 5,
+                      itemCount: 200,
                       itemBuilder: (context, index) {
                         return InkWell(
                           onTap: () {
@@ -47,7 +47,7 @@ class _CourseOneScreenState extends State<CourseOneScreen> {
             ],
           ),
           Positioned(
-            top: context.contextHeight * .4,
+            top: context.contextHeight * .35,
             child: Container(
               margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
               height: 100,

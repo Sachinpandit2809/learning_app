@@ -72,7 +72,7 @@ class CourseListContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+      margin: EdgeInsets.symmetric(vertical: 5, horizontal: 5),
       padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
@@ -99,7 +99,7 @@ class CourseListContainer extends StatelessWidget {
                   title2,
                   style: KTextStyle.K_15,
                 ),
-                Text(title3, style: KTextStyle.K_12),
+                Text(title3, style: KTextStyle.K_11),
               ],
             ),
           ),
@@ -113,7 +113,10 @@ class CourseBottomContainerTitleButton extends StatelessWidget {
   final String buttonTitle, title;
   final Color bgColor;
   const CourseBottomContainerTitleButton(
-      {super.key, required this.title,required this.bgColor, required this.buttonTitle});
+      {super.key,
+      required this.title,
+      required this.bgColor,
+      required this.buttonTitle});
 
   @override
   Widget build(BuildContext context) {

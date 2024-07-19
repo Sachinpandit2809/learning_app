@@ -90,11 +90,11 @@ class _MyWidgetState extends State<CategoryFourScreen> {
                   // crossAxisSpacing: 10,
                   // mainAxisSpacing: 10
                 ),
-                itemCount: 235,
+                itemCount: 300,
                 itemBuilder: (context, index) {
                   return InkWell(
                     onTap: () {
-                      context.router.pushNamed(RoutesName.lesson);
+                      context.router.pushNamed(RoutesName.course);
                     },
                     child: Container(
                       margin: EdgeInsets.symmetric(horizontal: 10, vertical: 5),

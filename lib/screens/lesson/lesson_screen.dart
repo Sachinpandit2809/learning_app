@@ -100,7 +100,7 @@ class _LessonScreenState extends State<LessonScreen> {
           ),
           Expanded(
               child: ListView.builder(
-                  itemCount: 5,
+                  itemCount: 50,
                   itemBuilder: (context, index) {
                     return InkWell(
                       onTap: () {

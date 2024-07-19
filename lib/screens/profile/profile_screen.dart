@@ -44,7 +44,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           children: [
             CircleAvatar(
               radius: 100,
-              backgroundImage: AssetImage("assets/images/png/profile3.png"),
+              backgroundImage: AssetImage("assets/images/png/app_icon.png"),
             ),
             (context.contextHeight * 0.04).heightBox,
             Text("in this lesson we learn ",

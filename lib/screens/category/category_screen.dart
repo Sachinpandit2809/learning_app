@@ -48,7 +48,7 @@ class _MyWidgetState extends State<CategoryScreen> {
                 height: 55,
                 child: ListView.builder(
                     scrollDirection: Axis.horizontal,
-                    itemCount: 13,
+                    itemCount: 300,
                     itemBuilder: (context, index) {
                       return RectangularButton(
                           title: "ENGLISH", onPressFunction: () {});

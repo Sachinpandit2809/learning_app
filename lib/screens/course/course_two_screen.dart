@@ -70,7 +70,7 @@ class _CourseTwoScreenState extends State<CourseTwoScreen> {
               ),
               Expanded(
                   child: ListView.builder(
-                      itemCount: 5,
+                      itemCount: 200,
                       itemBuilder: (context, index) {
                         return InkWell(
                           onTap: () {

@@ -23,7 +23,7 @@ class _IndexcopyScreenState extends State<IndexcopyScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       // backgroundColor:Gradient.linear(0, 100, Colors.red),
-    drawer: MydrawerScreen(),
+      drawer: MydrawerScreen(),
       appBar: AppBar(
         backgroundColor: Colors.yellow.shade200,
         actions: const [
@@ -103,7 +103,7 @@ class _IndexcopyScreenState extends State<IndexcopyScreen> {
                         crossAxisCount: 2,
                         crossAxisSpacing: 10,
                         mainAxisSpacing: 10),
-                    itemCount: 10,
+                    itemCount: 200,
                     itemBuilder: (context, index) {
                       return InkWell(
                           onTap: () {
@@ -216,37 +216,45 @@ class NContainerBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        margin: EdgeInsets.all(5),
-        height: 246,
-        width: 170,
+        margin: EdgeInsets.symmetric(horizontal: 5),
+        padding: EdgeInsets.all(5),
+        // height: 250,
+        // width: 170,
         decoration: BoxDecoration(
-            color: MyColor.white,
+            color: Color(0x22FCDB00),
             border: Border.all(color: MyColor.black),
             borderRadius: BorderRadius.circular(12)),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             const Text(
               "100 Essential \n Grammer",
-              style: KTextStyle.K_18,
+              style: KTextStyle.K_15,
             ),
-            (context.contextHeight * .01).heightBox,
+            // (context.contextHeight * .01).heightBox,
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Image.asset("assets/images/png/index_box.png"),
-                Text(
-                  "in this lesson we \nlearn new words",
-                  style: KTextStyle.K_12,
+                Padding(
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: Text(
+                    "in this lesson we \nlearn new words",
+                    style: KTextStyle.K_12,
+                  ),
                 ),
               ],
             ),
-            Container(margin: EdgeInsets.all(5), height: 5, color: Colors.green)
+            Container(
+              decoration: BoxDecoration(
+                  color: Colors.green, borderRadius: BorderRadius.circular(5)),
+              margin: EdgeInsets.symmetric(vertical: 4),
+              height: 4,
+            )
             //progressor bar
             ,
-            Text(
-              "Completed 12 of 12",
-              style: TextStyle(color: Colors.green),
-            ),
+            Text("Completed 12 of 12",
+                style: KTextStyle.K_12.copyWith(color: Colors.green)),
             FlexibleCustomColorButton(
                 title: "Reputation from 24 hour",
                 color: Colors.blue,
@@ -269,7 +277,7 @@ class FlexibleCustomColorButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 0, top: 20),
+      padding: const EdgeInsets.only(left: 0, top: 5),
       child: Container(
           height: 25,
           width: 145,

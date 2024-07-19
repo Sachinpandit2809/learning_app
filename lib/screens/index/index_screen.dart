@@ -94,7 +94,7 @@ class _IndexScreenState extends State<IndexScreen> {
                 height: context.contextHeight * 0.12,
                 width: context.contextWidth * 0.95,
                 decoration: BoxDecoration(
-                    color: MyColor.white,
+                    color: Color(0x44FCDB00),
                     borderRadius: BorderRadius.circular(12)),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -138,8 +138,8 @@ class _IndexScreenState extends State<IndexScreen> {
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
                           crossAxisSpacing: 5,
-                          mainAxisSpacing: 10),
-                      itemCount: 10,
+                          mainAxisSpacing: 15),
+                      itemCount: 200,
                       itemBuilder: (context, index) {
                         // here implemnted ink well only for test
                         return InkWell(
@@ -229,7 +229,7 @@ class CustomColorButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 0, top: 20),
+      padding: const EdgeInsets.only(left: 0, top: 10),
       child: Container(
           height: 25,
           width: 65,
@@ -252,56 +252,63 @@ class ContainerBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        margin: EdgeInsets.all(5),
-        height: 256,
-        width: 170,
+        margin: EdgeInsets.symmetric(horizontal: 5),
+        padding: EdgeInsets.all(5),
+        // height: 456,
+        // width: 170,
         decoration: BoxDecoration(
-            color: MyColor.white,
+            color: Color(0x24FCDB00),
             border: Border.all(color: MyColor.black),
             borderRadius: BorderRadius.circular(12)),
-        child: Padding(
-          padding: const EdgeInsets.only(left: 5.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text(
-                "100 Essential \nGrammer",
-                style: KTextStyle.K_18,
-              ),
-              (context.contextHeight * .01).heightBox,
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Image.asset("assets/images/png/index_box.png"),
-                  Text(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              "100 Essential \nGrammer",
+              style: KTextStyle.K_15,
+            ),
+            (context.contextHeight * .01).heightBox,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Image.asset("assets/images/png/index_box.png"),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: const Text(
                     "in this lesson we \nlearn new words",
                     style: KTextStyle.K_12,
                   ),
-                ],
-              ),
-              Container(
-                  margin: EdgeInsets.all(4), height: 4, color: Colors.green)
-              //progressor bar
-              ,
-              Text(
-                "Completed 12 of 12",
-                style: TextStyle(color: Colors.green),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  CustomColorButton(
-                      title: "Reputation",
-                      color: Colors.red,
-                      onPressFunction: () {}),
-                  CustomColorButton(
-                      title: "Reputation",
-                      color: Colors.blue,
-                      onPressFunction: () {})
-                ],
-              )
-            ],
-          ),
+                ),
+              ],
+            ),
+            Container(
+              decoration: BoxDecoration(
+                  color: Colors.green, borderRadius: BorderRadius.circular(5)),
+              margin: EdgeInsets.symmetric(vertical: 4),
+              height: 4,
+            )
+            //progressor bar
+            ,
+            const Text(
+              "Completed 12 of 12",
+              style: TextStyle(color: Colors.green),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                CustomColorButton(
+                    title: "Reputation",
+                    color: Colors.red,
+                    onPressFunction: () {}),
+                CustomColorButton(
+                    title: "Reputation",
+                    color: Colors.blue,
+                    onPressFunction: () {})
+              ],
+            )
+          ],
         ));
   }
 }
