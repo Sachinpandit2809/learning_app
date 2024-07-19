@@ -19,7 +19,7 @@ class EditProfileScreen extends StatefulWidget {
 }
 
 class _EditProfileScreenState extends State<EditProfileScreen> {
-  TextEditingController LastNameController = TextEditingController();
+  TextEditingController lastNameController = TextEditingController();
   TextEditingController firstNameController = TextEditingController();
 
   @override
@@ -60,14 +60,64 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                     color: Color(0xFFF7B500),
                   )),
               (context.contextHeight * 0.04).heightBox,
-              KTextformfield(
+              Padding(
+                padding: const EdgeInsets.all(18.0),
+                child: TextFormField(
                   controller: firstNameController,
-                  hintText: "Firstname",
-                  lebelText: "first name"),
-              KTextformfield(
-                  controller: firstNameController,
-                  hintText: "Lastname",
-                  lebelText: "last name"),
+                  decoration: InputDecoration(
+                    labelText: "first name",
+                    labelStyle:
+                        TextStyle(color: Colors.white), // Set label text color
+                    hintText: "first name",
+                    hintStyle:
+                        TextStyle(color: Colors.white54), // Set hint text color
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                          color: Colors.white), // Set border color when enabled
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                          color: Colors.white), // Set border color when focused
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                  ),
+                  style: TextStyle(color: Colors.white), // Set typed text color
+                  cursorColor: Colors.white, // Set cursor color
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(18.0),
+                child: TextFormField(
+                  controller: lastNameController,
+                  decoration: InputDecoration(
+                    labelText: "last name",
+                    labelStyle:
+                        TextStyle(color: Colors.white), // Set label text color
+                    hintText: "last name",
+                    hintStyle:
+                        TextStyle(color: Colors.white54), // Set hint text color
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                          color: Colors.white), // Set border color when enabled
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                          color: Colors.white), // Set border color when focused
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                  ),
+                  style: TextStyle(color: Colors.white), // Set typed text color
+                  cursorColor: Colors.white, // Set cursor color
+                ),
+              ),
               Padding(
                 padding: const EdgeInsets.all(18.0),
                 child: ProfileCustomColorButton(

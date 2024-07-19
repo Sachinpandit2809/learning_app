@@ -20,15 +20,30 @@ class _KTextformfieldState extends State<KTextformfield> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 14.0, horizontal: 30),
-      child: TextFormField(
-        controller: widget.controller,
-        decoration: InputDecoration(
+        padding: const EdgeInsets.symmetric(vertical: 14.0, horizontal: 30),
+        child: TextFormField(
+          controller: widget.controller,
+          decoration: InputDecoration(
             labelText: widget.lebelText,
+            labelStyle: TextStyle(color: Colors.black), // Set label text color
             hintText: widget.hintText,
-            border:
-                OutlineInputBorder(borderRadius: BorderRadius.circular(12))),
-      ),
-    );
+            hintStyle: TextStyle(color: Colors.black54), // Set hint text color
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12),
+            ),
+            enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+                  color: Colors.black), // Set border color when enabled
+              borderRadius: BorderRadius.circular(12),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+                  color: Colors.black), // Set border color when focused
+              borderRadius: BorderRadius.circular(12),
+            ),
+          ),
+          style: TextStyle(color: Colors.black), // Set typed text color
+          cursorColor: Colors.black, // Set cursor color
+        ));
   }
 }
