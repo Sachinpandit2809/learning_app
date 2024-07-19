@@ -8,6 +8,7 @@ import 'package:flutter/widgets.dart';
 import 'package:learning_app/colors/my_color.dart';
 import 'package:learning_app/extension/context_extension.dart';
 import 'package:learning_app/extension/num_extension.dart';
+import 'package:learning_app/routes/routes_name.dart';
 import 'package:learning_app/screens/category/mydrawer_screen.dart';
 import 'package:learning_app/styles/text_style.dart';
 
@@ -66,40 +67,37 @@ class _Indexcopy2ScreenState extends State<Indexcopy2Screen> {
                           scrollDirection: Axis.horizontal,
                           itemCount: 12,
                           itemBuilder: (context, index) {
-                            return Column(children: [
-                              Column(
-                                children: [
-                                  Container(
-                                    margin: EdgeInsets.symmetric(
-                                        horizontal: 10, vertical: 15),
-                                    height: 120,
-                                    width: 100,
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(12),
-                                        color: Colors.white),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        CircleAvatar(
-                                          radius: 25,
-                                          backgroundImage: AssetImage(
-                                              "assets/images/png/profile.png"),
-                                        ),
-                                        Text("Dana Koprvota",
-                                            style: KTextStyle.K_12),
-                                        Text("Student",
-                                            style: KTextStyle.K_10.copyWith(
-                                                color: Colors.orange)),
-                                        // Icon(Icons.arrow_drop_down_sharp, size: 35)
-                                      ],
+                            return InkWell(
+                              onTap: () {
+                                context.router.pushNamed(RoutesName.category);
+                              },
+                              child: Container(
+                                margin: EdgeInsets.symmetric(
+                                    horizontal: 10, vertical: 15),
+                                height: 120,
+                                width: 100,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(12),
+                                    color: Colors.white),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    CircleAvatar(
+                                      radius: 25,
+                                      backgroundImage: AssetImage(
+                                          "assets/images/png/profile.png"),
                                     ),
-                                  ),
-                                ],
+                                    Text("Dana Koprvota",
+                                        style: KTextStyle.K_12),
+                                    Text("Student",
+                                        style: KTextStyle.K_10
+                                            .copyWith(color: Colors.orange)),
+                                    // Icon(Icons.arrow_drop_down_sharp, size: 35)
+                                  ],
+                                ),
                               ),
-                            ]);
+                            );
                           })),
                 ]),
 
@@ -107,49 +105,55 @@ class _Indexcopy2ScreenState extends State<Indexcopy2Screen> {
                   child: ListView.builder(
                       itemCount: 10,
                       itemBuilder: (context, index) {
-                        return Container(
-                          height: 90,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(12),
-                              color: MyColor.white,
-                              border: Border.all(color: Colors.grey.shade600)),
-                          margin: EdgeInsets.all(10),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.fromLTRB(
-                                        18.0, 0, 8, 0),
-                                    child: Image.asset(
-                                        "assets/images/png/index_box.png"),
-                                  ),
-                                  Text(
-                                    "in this lesson we \nlearn new words",
-                                    style: KTextStyle.K_10,
-                                  ),
-                                ],
-                              ),
-                              5.heightBox,
-                              Divider(
-                                color: Colors.orange,
-                                thickness: 4,
-                                indent: 20,
-                                endIndent: 20,
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 20),
-                                child: Text(
-                                  "Completed 12 of 12",
-                                  style: KTextStyle.K_11
-                                      .copyWith(color: Colors.orange),
+                        return InkWell(
+                          onTap: () {
+                            context.router.pushNamed(RoutesName.category);
+                          },
+                          child: Container(
+                            height: 90,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(12),
+                                color: MyColor.white,
+                                border:
+                                    Border.all(color: Colors.grey.shade600)),
+                            margin: EdgeInsets.all(10),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.fromLTRB(
+                                          18.0, 0, 8, 0),
+                                      child: Image.asset(
+                                          "assets/images/png/index_box.png"),
+                                    ),
+                                    Text(
+                                      "in this lesson we \nlearn new words",
+                                      style: KTextStyle.K_10,
+                                    ),
+                                  ],
                                 ),
-                              )
-                            ],
+                                5.heightBox,
+                                Divider(
+                                  color: Colors.orange,
+                                  thickness: 4,
+                                  indent: 20,
+                                  endIndent: 20,
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 20),
+                                  child: Text(
+                                    "Completed 12 of 12",
+                                    style: KTextStyle.K_11
+                                        .copyWith(color: Colors.orange),
+                                  ),
+                                )
+                              ],
+                            ),
                           ),
                         );
                       }),

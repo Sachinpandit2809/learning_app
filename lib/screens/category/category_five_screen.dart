@@ -2,6 +2,7 @@ import "package:auto_route/annotations.dart";
 import "package:flutter/material.dart";
 import "package:learning_app/colors/my_color.dart";
 import "package:learning_app/k_widgets/k_textformfield.dart";
+import "package:learning_app/screens/category/mydrawer_screen.dart";
 import "package:learning_app/styles/text_style.dart";
 
 // @RoutePage()
@@ -75,7 +76,7 @@ class _CategoryFiveScreenState extends State<CategoryFiveScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: const Drawer(),
+      drawer: const MydrawerScreen(),
       appBar: AppBar(
         title: const Text(
           "SAMOHAL",
@@ -96,7 +97,13 @@ class _CategoryFiveScreenState extends State<CategoryFiveScreen> {
           Expanded(
             flex: 1,
             child: Container(
-              color: Colors.cyan,
+              width: double.infinity,
+              color: MyColor.yellow.withOpacity(0.2),
+              child: Center(
+                  child: Text(
+                "MEssage system will be initializing soon ",
+                style: KTextStyle.K_18.copyWith(color: Colors.black),
+              )),
             ),
           ),
           //   Container(

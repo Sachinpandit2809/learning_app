@@ -8,7 +8,7 @@ class ProfileCustomColorButton extends StatelessWidget {
   final Color buttonBgColor;
   final VoidCallback onPress;
 
-  const ProfileCustomColorButton(
+   ProfileCustomColorButton(
       {super.key,
       required this.buttonBgColor,
       required this.title,

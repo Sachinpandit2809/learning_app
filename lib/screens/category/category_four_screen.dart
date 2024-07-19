@@ -1,8 +1,10 @@
 import "package:auto_route/annotations.dart";
+import "package:auto_route/auto_route.dart";
 import "package:flutter/material.dart";
 import "package:learning_app/colors/my_color.dart";
 import "package:learning_app/extension/context_extension.dart";
 import "package:learning_app/extension/num_extension.dart";
+import "package:learning_app/routes/routes_name.dart";
 import "package:learning_app/screens/category/mydrawer_screen.dart";
 import "package:learning_app/styles/text_style.dart";
 
@@ -90,28 +92,33 @@ class _MyWidgetState extends State<CategoryFourScreen> {
                 ),
                 itemCount: 235,
                 itemBuilder: (context, index) {
-                  return Container(
-                    margin: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                    height: 120,
-                    width: 100,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12),
-                        color: Colors.white),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        CircleAvatar(
-                          radius: 25,
-                          backgroundImage:
-                              AssetImage("assets/images/png/profile.png"),
-                        ),
-                        Text("Dana Koprvota", style: KTextStyle.K_12),
-                        Text("Student",
-                            style:
-                                KTextStyle.K_10.copyWith(color: Colors.orange)),
-                        // Icon(Icons.arrow_drop_down_sharp, size: 35)
-                      ],
+                  return InkWell(
+                    onTap: () {
+                      context.router.pushNamed(RoutesName.lesson);
+                    },
+                    child: Container(
+                      margin: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                      height: 120,
+                      width: 100,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12),
+                          color: Colors.white),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          CircleAvatar(
+                            radius: 25,
+                            backgroundImage:
+                                AssetImage("assets/images/png/profile.png"),
+                          ),
+                          Text("Dana Koprvota", style: KTextStyle.K_12),
+                          Text("Student",
+                              style: KTextStyle.K_10
+                                  .copyWith(color: Colors.orange)),
+                          // Icon(Icons.arrow_drop_down_sharp, size: 35)
+                        ],
+                      ),
                     ),
                   );
                 }),

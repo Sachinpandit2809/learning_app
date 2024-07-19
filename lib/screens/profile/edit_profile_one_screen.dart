@@ -1,9 +1,12 @@
 import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:learning_app/colors/my_color.dart';
 import 'package:learning_app/extension/context_extension.dart';
 import 'package:learning_app/extension/num_extension.dart';
 import 'package:learning_app/k_widgets/profile_custom_color_buttom.dart';
+import 'package:learning_app/routes/routes_name.dart';
+import 'package:learning_app/screens/category/mydrawer_screen.dart';
 // import 'package:learning_app/k_widgets/profile_custom_color_buttom.dart';
 import 'package:learning_app/styles/text_style.dart';
 
@@ -19,6 +22,7 @@ class _EditProfileOneScreenState extends State<EditProfileOneScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      endDrawer: MydrawerScreen(),
       backgroundColor: MyColor.drawerBlack,
       appBar: AppBar(
         backgroundColor: MyColor.drawerBlack,
@@ -57,7 +61,9 @@ class _EditProfileOneScreenState extends State<EditProfileOneScreen> {
                   buttonBgColor: Color(0x00),
                   title: "Block",
                   tittleColor: Color(0xFFE02020),
-                  onPress: () {})
+                  onPress: () {
+                    context.router.pushNamed(RoutesName.userProfile);
+                  })
             ],
           ),
         ),

@@ -4,6 +4,7 @@ import 'package:learning_app/colors/my_color.dart';
 import 'package:learning_app/extension/context_extension.dart';
 import 'package:learning_app/extension/num_extension.dart';
 import 'package:learning_app/k_widgets/profile_custom_color_buttom.dart';
+import 'package:learning_app/screens/category/mydrawer_screen.dart';
 import 'package:learning_app/styles/text_style.dart';
 
 @RoutePage()
@@ -18,6 +19,7 @@ class _EditProfileTwoScreenState extends State<EditProfileTwoScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      endDrawer: MydrawerScreen(),
       backgroundColor: MyColor.drawerBlack,
       appBar: AppBar(
         backgroundColor: MyColor.drawerBlack,

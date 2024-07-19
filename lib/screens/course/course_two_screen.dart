@@ -1,5 +1,7 @@
 import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:learning_app/routes/routes_name.dart';
 import 'package:learning_app/screens/category/reusable_widgets.dart';
 import 'package:learning_app/styles/text_style.dart';
 
@@ -70,12 +72,17 @@ class _CourseTwoScreenState extends State<CourseTwoScreen> {
                   child: ListView.builder(
                       itemCount: 5,
                       itemBuilder: (context, index) {
-                        return const CourseListContainer(
-                            titleColor: Colors.blue,
-                            title1: "Complete",
-                            title2: "introduction",
-                            title3:
-                                "In the lessns we leran new words and rules \nfor vacalaburities continues and articles");
+                        return InkWell(
+                          onTap: () {
+                            context.router.pushNamed(RoutesName.lesson);
+                          },
+                          child: const CourseListContainer(
+                              titleColor: Colors.blue,
+                              title1: "Complete",
+                              title2: "introduction",
+                              title3:
+                                  "In the lessns we leran new words and rules \nfor vacalaburities continues and articles"),
+                        );
                       }))
             ],
           ),

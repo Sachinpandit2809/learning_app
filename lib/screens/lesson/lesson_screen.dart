@@ -1,7 +1,9 @@
 import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:learning_app/extension/num_extension.dart';
+import 'package:learning_app/routes/routes_name.dart';
 import 'package:learning_app/screens/category/mydrawer_screen.dart';
 import 'package:learning_app/screens/index/index_screen.dart';
 import 'package:learning_app/styles/text_style.dart';
@@ -100,55 +102,61 @@ class _LessonScreenState extends State<LessonScreen> {
               child: ListView.builder(
                   itemCount: 5,
                   itemBuilder: (context, index) {
-                    return Container(
-                        margin: EdgeInsets.symmetric(vertical: 5),
-                        height: 100,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(12),
-                          border: Border.all(color: Colors.grey),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Container(
-                              width: 98,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.only(
-                                      bottomLeft: Radius.circular(12),
-                                      topLeft: Radius.circular(12)),
-                                  image: DecorationImage(
-                                      image: AssetImage(
-                                          "assets/images/png/index_pic_1.png"))),
-                            ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Text(
-                                  "Best class behavier ",
-                                  style: KTextStyle.K_18,
-                                ),
-                                Text(
-                                  "In this lesson we learn about new rules ",
-                                  style: KTextStyle.K_12,
-                                ),
-                                Text(
-                                  "Free 65 ",
-                                  style: KTextStyle.K_15.copyWith(
-                                      decoration: TextDecoration.lineThrough),
-                                ),
-                              ],
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(right: 8.0),
-                              child: Icon(
-                                Icons.arrow_forward_ios,
-                                size: 12,
+                    return InkWell(
+                      onTap: () {
+                        context.router.pushNamed(RoutesName.lesson_one);
+                      },
+                      child: Container(
+                          margin: EdgeInsets.symmetric(vertical: 5),
+                          height: 100,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(12),
+                            border: Border.all(color: Colors.grey),
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Container(
+                                width: 98,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.only(
+                                        bottomLeft: Radius.circular(12),
+                                        topLeft: Radius.circular(12)),
+                                    image: DecorationImage(
+                                        image: AssetImage(
+                                            "assets/images/png/index_pic_1.png"))),
                               ),
-                            )
-                          ],
-                        ));
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Text(
+                                    "Best class behavier ",
+                                    style: KTextStyle.K_18,
+                                  ),
+                                  Text(
+                                    "In this lesson we learn about new rules ",
+                                    style: KTextStyle.K_12,
+                                  ),
+                                  Text(
+                                    "Free 65 ",
+                                    style: KTextStyle.K_15.copyWith(
+                                        decoration: TextDecoration.lineThrough),
+                                  ),
+                                ],
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(right: 8.0),
+                                child: Icon(
+                                  Icons.arrow_forward_ios,
+                                  size: 12,
+                                ),
+                              )
+                            ],
+                          )),
+                    );
                   }))
         ],
       ),
